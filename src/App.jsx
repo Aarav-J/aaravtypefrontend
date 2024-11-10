@@ -5,9 +5,17 @@ import Statistics from "./Components/Statistics";
 import TapKey from "./Components/TabKey";
 import Navbar from "./Components/Navbar";
 import { Timer } from "@phosphor-icons/react";
+import MobileError from "./Components/MobileError";
+
 function App() {
   
   const {isTestOver, setIsTestOver, isFocused, reset, selectedTimeControl, setSelectedTimeControl} = useStore()  
+  const isMobileDevice = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  const screenWidth = window.innerWidth;
+
+  if (isMobileDevice && screenWidth < 1024) {
+    return <MobileError />;
+  }
   
   return (
     <div className="flex flex-col items-center justify-between h-screen bg-background w-screen text-untyped py-8">
