@@ -1,0 +1,45 @@
+.editable-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+    min-width: 300px;
+    min-height: 40px;
+    cursor: text;
+    outline: none;
+    font-family: monospace;
+    font-size: 18px;
+    white-space: pre-wrap;
+    position: relative;
+  }
+  
+  .text-display {
+    display: inline;
+  }
+  
+  .char {
+    position: relative;
+  }
+  
+  .incorrect {
+    color: red;
+  }
+
+  .correct {
+    color: green;
+  }
+  
+  .cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background-color: black;
+    margin-left: -1px;
+    animation: blink 1s step-start infinite;
+  }
+  
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
